@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Brindes Randômicos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+function brindesSorteio() {
+  var brindeSorteado = new Array();
+  var brindesArray = new Array('Celular','HeadPhone','Camiseta');
+  var brindesQuantidade = new Array('5','25','50');
+  
+  for (var i = 0; i <= 80; i++){
+    var randomValor = Math.floor(Math.random()*brindesArray.length);
+    if(brindesArray[randomValor] == 'Celular'){
+      brindeSorteado.push(brindesArray[randomValor]);
+      brindesQuantidade[0]--;        
+      document.writeln("Celular" + brindeSorteado.length + "<br />");
+      if(brindesQuantidade[0] < 1){
+        brindesArray.splice(randomValor,1);
+      }
+    }
+    else if(brindesArray[randomValor] == 'HeadPhone'){
+      brindeSorteado.push(brindesArray[randomValor]);
+      brindesQuantidade[1]--;
+      document.writeln("HeadPhone" + brindeSorteado.length + "<br />");
+      if(brindesQuantidade[1] < 1){
+        brindesArray.splice(randomValor,1);
+      }
+    }
+    else if(brindesArray[randomValor] == 'Camiseta'){
+      brindeSorteado.push(brindesArray[randomValor]);
+      brindesQuantidade[2]--;
+      document.writeln("Camiseta" + brindeSorteado.length + "<br />");
+      if(brindesQuantidade[2] < 1){
+        brindesArray.splice(randomValor,1);
+      }
+    }
+  }
+}
+
+</script>
+</head>
+<body onload="brindesSorteio();">
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+ <html lang="pt-br"> 
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+        <meta charset="utf-8">
+        <title>Estudos JS - Tabela Vertical</title>
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+                text-align: center;
+            }
+                table{
+                    margin: auto;
+                    background-color: #b1b1b1;
+                    border-collapse: separate;
+                    border-spacing: 0px;
+                    }
+                td{
+                    width: 40px; 
+                    line-height: 40px;
+                    border: 2px solid gray;
+                    text-align: center;
+                  
+                }
+                
+
+        </style>
+    </head>
+
+    <body>
+        
+    <script type="text/javascript">
+        
+        var value = 1;
+        var table = '<table border="1" cellspacing="0" cellpadding="5">';
+        var rows = 10;
+        var columns = 10;
+
+        var total = (rows * columns);
+        for(i = 1; i <= total; i++){
+
+            table += '<td align="center" bgcolor="' + ( (i % 2 == value) ? "#D1D1D1" : "#FF0000" ) +'">' + i.toString() + '</td>';            
+                        
+            if( i % columns == 0 ){
+                table += '</tr>';
+                value = ( value == 0) ? 1 : 0;
+            }
+        };
+
+        table += '</table>';
+        document.writeln(table);
+    </script>
+
+    </body>
+</html>

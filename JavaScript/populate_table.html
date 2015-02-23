@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+ <html lang="pt-br"> 
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=9">
+        <meta charset="utf-8">
+        <title>Estudos JS - Tabela</title>
+        <style type="text/css">
+            body{
+                font-family: sans-serif;
+                text-align: center;
+            }
+                table{
+                    margin: auto;
+                    background-color: #b1b1b1;
+                    border-collapse: separate;
+                    border-spacing: 0px;
+                    }
+                td{
+                    width: 40px; 
+                    line-height: 40px;
+                    border: 2px solid gray;
+                    text-align: center;
+                  
+                }
+        </style>
+    </head>
+
+    <body>
+        
+    <script type="text/javascript">
+
+        var rows = 10;
+        var columns = 10;
+        var table = '';
+        var count = 1;
+        table += '<table border="1" cellspacing="0" cellpadding="5">';
+
+        for(i = 0; i < rows; i++){
+           table += '<tr>';
+           for (j = 0; j < columns; j++){
+              table += '<td align="center">' + count + '</td>';
+              count++;
+           };
+           table += '</tr>';
+
+        };
+
+        table += '</table>';
+        document.writeln(table);
+
+
+    </script>
+
+    </body>
+</html>
