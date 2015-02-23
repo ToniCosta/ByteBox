@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Numeros Random</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+
+ Randomico = function(quantos,limite){
+  var i_str = 0;
+  var numeros_array = new Array();
+  var sorteados_array = new Array();
+  var indice_str = 0;
+  // Com esse loop abaixo eu gravo em uma matriz todos os mumeros que eu vou usar
+  for(i_str = 0; i_str < limite; i_str++){ // 1º for
+    numeros_array.push(i_str);
+  } // 1º for
+  // Com esse loop eu começo a sortear
+  for(i_str = 0; i_str < quantos; i_str++){ // 2º for
+    // Sorteio um numero qualquer com base no total de item da matriz de numeros
+    indice_str = Math.floor(Math.random()*numeros_array.length);
+    // Gravo em uma nova matriz o numero que esteja no indice que foi sorteado
+    sorteados_array.push(numeros_array[indice_str]);
+    // Uma vez que esse numero já foi usado eu o removo da matriz de numeros o que torna impossível que o mesmo seja sorteado novamente
+    numeros_array.splice(indice_str, 1)
+  } // 2º for
+  return sorteados_array;
+}
+output = Randomico(50,100);
+document.writeln(output);
+
+</script>
+</head>
+<body >
+</body>
+</html>
