@@ -1,0 +1,164 @@
+body { 
+  font: normal 16px/20px "Helvetica Neue", Helvetica, sans-serif;
+  background: rgb(237, 237, 236);
+  margin: 0;
+  margin-top: 40px;
+  padding: 0;
+}
+
+/* RESET CSS */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0;padding:0;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* END RESET CSS */
+
+[draggable] {
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  
+  -khtml-user-drag: element;
+  -webkit-user-drag: element;
+}
+.clear{
+  clear: both;
+}
+body{
+  background: #0994e4;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+header{
+  background: #ef0b71;
+  height: 40px;
+  width: 100%;
+  border-bottom: 2px solid #ffffff;
+}
+header .wrapper a{
+  display: block;
+  padding: 6px 0;
+  text-decoration: none;
+}
+header .wrapper a h1{
+  background: url('../images/logo-todo-task.png') no-repeat;
+  display: block;
+  height: 30px;
+  margin: 0 auto;
+  width: 62px;    
+  text-indent: -9999px;
+}
+.wrapper{
+  width: 1000px;
+  margin: 0 auto;
+}
+
+section{
+  display: block;
+  margin-top: 2%;
+  position: relative;
+
+}
+section .model-content{
+  background: #d7d7d7;
+  border-radius: 8px;
+  float: left;
+  margin-left: 2%;
+  min-height: 50px;
+  padding: 1%;
+  position: relative;
+  width: 32.3%;
+    
+}
+section .model-content form {
+  display: none;
+  background: #333;
+  border-radius: 8px;
+  color: #fff;    
+  padding: 4%;
+  width: 92%;
+}
+section .model-content form #newtodo {
+  width: 91%;
+  -webkit-appearance: none;
+  background-color: #e2e4e6;
+  border: 1px solid #cdd2d4;
+  border-radius: 3px;
+  display: block;
+  margin-bottom: 12px;
+  min-height: 34px;
+  padding: 4%;
+}
+section .model-content form input[type='submit']{
+  background: #ef0b71;
+  border: none;
+  box-shadow: 0 1px 0 #ef0b71;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+  font-weight: 700;
+  height: 22px;
+  line-height: 22px; 
+  text-align: center;
+}
+section .model-content .add-task{
+  color: #242424;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}  
+section .model-content .box-todo:hover:after,
+section .model-content .box-todo.done:after {
+  content: '✔';
+  color: #060;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+section .model-content .box-todo.done:hover:after {
+  content: 'x';
+  font-weight: bold;
+  color: #c00;
+  position: absolute;
+  right: 5px;    
+  top: 5px;
+}
+section .model-content h2{
+  border-bottom: 2px dotted #ccc;
+  color: #242424;
+  height: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4%;
+}
+section .model-content .box-todo{    
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px;    
+  cursor: move;
+  min-height: 30px;        
+  margin-bottom: 2%;
+  padding: 2%;
+  width: 96%;
+  position: relative;
+}
+section .model-content .box-done{
+  background: #ccc;
+  border-bottom: 1px solid #ccc;
+  border-radius: 8px;    
+  cursor: pointer;
+  min-height: 30px;        
+  margin-bottom: 2%;
+  padding: 2%;
+  width: 96%;
+  position: relative;
+}
+.close-new-task{
+  font-size: 14px;
+  cursor: pointer;
+}
+.over {
+  border: 2px dashed #000;
+}
