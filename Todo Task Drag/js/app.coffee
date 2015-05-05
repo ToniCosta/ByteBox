@@ -5,7 +5,6 @@ window.onload = ->
 	field = document.querySelector('#newtodo')
 	boxTodo = document.querySelectorAll('.box-todo')
 
-	doneTask = document.querySelector('#done-task')
 	openAddTask = document.getElementById('add-task')
 	closedAddTask = document.querySelector('.close-new-task');
 	submit = document.getElementById('submit')
@@ -35,6 +34,7 @@ window.onload = ->
 
 	submit.onclick = ->
 
+
 		text = document.getElementById('newtodo')
 		if text.value != ''
 			liClassName = 'box-todo'
@@ -42,6 +42,7 @@ window.onload = ->
 			newTask.setAttribute 'class', liClassName
 			newTask.setAttribute 'draggable', true
 			newTask.innerHTML = '<a class="" title=""><div class="content-tasks"><p class="text-task">' + text.value + '</p></div></a>'
+			newTask.addEventListener 'click', removeTask, false
 			newTask.addEventListener 'dragstart', handleDragStart, false
 			newTask.addEventListener 'dragenter', handleDragEnter, false
 			newTask.addEventListener 'dragover', handleDragOver, false
@@ -92,5 +93,24 @@ window.onload = ->
 	handleDragEnd = (e) ->
 		@className = 'box-todo'
 		return
+
+	removeTask = (evt) ->
+		target = evt.target
+
+		donetask = document.querySelector('#done-task');
+
+		if (target.tagName == 'LI') 
+      
+		    if (target.className == 'box-todo done') 
+
+		    	doneTask = document.createElement('LI')
+		    	liClassName = 'box-done'
+		    	doneTask.setAttribute('class',liClassName);
+		    	doneTask.style.textDecoration = 'line-through';
+		    	doneTask.innerHTML =  target.innerHTML;  
+		    	donetask.appendChild(doneTask);        
+		    	target.parentNode.removeChild(target);        
+    		else
+        		target.className = 'box-todo done';
 
 	return
