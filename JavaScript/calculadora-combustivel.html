@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmo Calculadora - Combustivel</title>
+</head>
+<body>
+    <div>
+        <p id="valorGasolina"></p>
+        <p id="valorAlcool"></p>
+        <p id="valorConsumo"></p>
+    </div>
+
+    <script>
+        function init () {
+            var elementoGasolina = document.getElementById('valorGasolina');
+            var elementoAlcool = document.getElementById('valorAlcool');
+            var elementoConsumo = document.getElementById('valorConsumo');
+
+            do {
+                var valorGasolina = parseFloat(prompt('Digite o valor da gasolina'));
+                var valorAlcool = parseFloat(prompt('Digite o valor do álcool'));
+                var valorConsumo = valorAlcool / valorGasolina;
+
+                if (valorConsumo > 0.7) alert('Vale a pena a gasolina.');
+                if (valorConsumo < 0.7) alert('Vale a pena o álcool.');
+                if (valorConsumo === 0.7) alert('Escolha o que desejar, tanto faz abastecer com um ou outro.');    
+                
+                var continuar = parseInt(prompt('Deseja efetuar um novo cálculo? Digite 1 SIM e 0 NÃO'));    
+                if (continuar === 0) alert('Obrigado por utilizar nosso programa.');
+                
+                elementoGasolina.innerHTML = `O valor inserido da gasolina é R$ ${valorGasolina}`;
+                elementoAlcool.innerHTML = `O valor inserido da gasolina é R$ ${valorAlcool}`;
+                elementoConsumo.innerHTML = `O cálculo de consumo de álcool / gasolina é ${valorConsumo}`;
+            } while (continuar === 1)
+        }
+        init();
+    </script>    
+</body>
+</html>
