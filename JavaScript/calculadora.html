@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    
+    <script>
+        var valor1;
+        var valor2;
+        var contador = 0;
+        var valorSimbolo;
+        adicao = (n1, n2) => {
+            return n1 + n2;
+        }
+        subtracao = (n1, n2) => {
+            return n1 - n2;
+        }
+        multiplicacao = (n1, n2) => {
+            return n1 * n2;
+        }
+        divisao = (n1, n2) => {
+            return n1 / n2;
+        }
+        imprimir = (total) => {
+            document.write(total);
+        }
+        numero = () => {        
+            contador++
+            let opcao = parseInt(prompt('Digite um número'));
+            if (contador === 1) valor1 = opcao
+            if (contador === 2) {
+                valor2 = opcao
+                document.write(`${valor1} ${valorSimbolo} ${valor2} `)
+            }
+            return opcao
+        }
+        start = () => {
+            
+            let opcao = prompt('Escolha uma opção: \n 1.Soma \n 2.Subtracao \n 3.Multiplicação \n 4.Divisão \n')
+            let menuOpcao = [ 
+                {nome: 'Adição', valor: '+'},
+                {nome: 'Subtracao', valor: '-'},
+                {nome: 'Multiplicação', valor: '*'},
+                {nome: 'Divisão', valor: '/'}
+            ]
+            valorSimbolo = menuOpcao[opcao-1].valor
+            document.write(`A opção escolhida foi: ${menuOpcao[opcao-1].nome}\n\n`)
+            if (opcao === '1') {
+                let calc = '= ' + adicao(numero(), numero());
+                document.write(calc);
+            }
+            if (opcao === '2') {
+                let calc = '= ' + subtracao(numero(), numero());
+                document.write(calc);
+            }
+            if (opcao === '3') {
+                let calc = '= ' + multiplicacao(numero(), numero());
+                document.write(calc);
+            }
+            if (opcao === '4') {
+                let calc = '= ' + divisao(numero(), numero());
+                document.write(calc);
+            }
+        }
+        window.onload = () => {
+            start();
+        }    
+    </script>
+</body>
+</html>
